@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,14 +6,14 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
     public int health;
-
+    public float speedModifier;
     public Transform[] routes;
+
     private Route route;
     private List<float> pointDistances;
     private float lastPointDistance;
-    private int nextRoute;
-    public float speedModifier;
     private float distanceTraveled;
+    private int nextRoute;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,11 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+
         MoveAlongRoute();
     }
 
@@ -35,6 +41,7 @@ public class EnemyAI : MonoBehaviour
     {
         distanceTraveled += Time.deltaTime * speedModifier;
 
+        //If route is finished, sets up next route
         if (distanceTraveled > route.lenght)
         {
             nextRoute++;
@@ -50,6 +57,7 @@ public class EnemyAI : MonoBehaviour
             lastPointDistance = 0;
         }
 
+        //Travel along route
         for (int i = pointDistances.IndexOf(lastPointDistance); i < pointDistances.Count; i++)
         {
             if (pointDistances[i] < distanceTraveled)
@@ -58,15 +66,9 @@ public class EnemyAI : MonoBehaviour
                 continue;
             }
 
-            if (pointDistances[i] - distanceTraveled < distanceTraveled - lastPointDistance)
-            {
-                transform.position = route.points[pointDistances[i]];
-                lastPointDistance = pointDistances[i];
-            }
-            else
-            {
-                transform.position = route.points[lastPointDistance];
-            }
+            float lerpValue = (distanceTraveled - lastPointDistance) / (pointDistances[i] - lastPointDistance);
+
+            transform.position = Vector3.Lerp(route.points[lastPointDistance], route.points[pointDistances[i]], lerpValue);
 
             break;
         }

@@ -8,6 +8,7 @@ public class Tower : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+
         if (other.tag == "Enemy")
         {
             other.GetComponent<EnemyAI>().health -= damage;

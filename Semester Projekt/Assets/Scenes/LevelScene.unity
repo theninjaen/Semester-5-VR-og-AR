@@ -214,7 +214,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7817736010085930347, guid: 06c984940a530a4448b55506319e9780, type: 3}
       propertyPath: routeSegments
-      value: 100
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8335336170690181296, guid: 06c984940a530a4448b55506319e9780, type: 3}
       propertyPath: m_LocalPosition.x
@@ -233,6 +233,38 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06c984940a530a4448b55506319e9780, type: 3}
+--- !u!1 &597761741 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5636880441106309209, guid: 79476b0ec4394a645a6d2af849a6efe0, type: 3}
+  m_PrefabInstance: {fileID: 2294316223600812052}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &597761742
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597761741}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &637770164 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5621257844384534175, guid: 06c984940a530a4448b55506319e9780, type: 3}
@@ -578,7 +610,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7817736010085930347, guid: 06c984940a530a4448b55506319e9780, type: 3}
       propertyPath: routeSegments
-      value: 100
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8335336170690181296, guid: 06c984940a530a4448b55506319e9780, type: 3}
       propertyPath: m_LocalPosition.x
@@ -612,7 +644,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2249800526548578319, guid: 086c7fee019482c44a737c85881c7e18, type: 3}
       propertyPath: speedModifier
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2249800526548578319, guid: 086c7fee019482c44a737c85881c7e18, type: 3}
       propertyPath: routes.Array.size
@@ -691,6 +723,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower
       objectReference: {fileID: 0}
+    - target: {fileID: 5636880441106309209, guid: 79476b0ec4394a645a6d2af849a6efe0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7669077187827331208, guid: 79476b0ec4394a645a6d2af849a6efe0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -734,7 +770,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5636880441106309209, guid: 79476b0ec4394a645a6d2af849a6efe0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 597761742}
   m_SourcePrefab: {fileID: 100100000, guid: 79476b0ec4394a645a6d2af849a6efe0, type: 3}
 --- !u!1001 &6771564359731975664
 PrefabInstance:
@@ -822,7 +861,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7817736010085930347, guid: 06c984940a530a4448b55506319e9780, type: 3}
       propertyPath: routeSegments
-      value: 100
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8335336170690181296, guid: 06c984940a530a4448b55506319e9780, type: 3}
       propertyPath: m_LocalPosition.x

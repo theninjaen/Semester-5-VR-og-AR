@@ -16,7 +16,7 @@ public class Route : MonoBehaviour
     {
         float t = 0;
 
-        for (int i = 0; i <= routeSegments - 1 ; i++)
+        for (int i = 0; i <= routeSegments ; i++)
         {
             Vector3 routePoint = Mathf.Pow(1 - t, 3) * controlPoints[0].position +
                 3 * Mathf.Pow(1 - t, 2) * t * controlPoints[1].position +
