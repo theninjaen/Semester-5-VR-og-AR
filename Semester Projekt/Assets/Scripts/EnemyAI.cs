@@ -7,7 +7,9 @@ public class EnemyAI : MonoBehaviour
 {
     public int health;
     public float speedModifier;
-    public Transform[] routes;
+    public GameObject[] routesObjects;
+    public Route[] routes;
+
 
     private Route route;
     private List<float> pointDistances;
@@ -22,7 +24,16 @@ public class EnemyAI : MonoBehaviour
         lastPointDistance = 0;
         distanceTraveled = 0;
 
-        route = routes[nextRoute].GetComponent<Route>();
+        routes = new Route[routesObjects.Length];
+
+        for (int i = 0; i < routesObjects.Length; i++)
+        {
+            routes[i] = routesObjects[i].GetComponent<Route>();
+            routes[i].MakeRoute();
+        }
+
+        route = routes[nextRoute];
+
         pointDistances = new List<float>(route.points.Keys);
     }
 
@@ -49,7 +60,7 @@ public class EnemyAI : MonoBehaviour
             if (nextRoute > routes.Length - 1)
                 nextRoute = 0;
 
-            route = routes[nextRoute].GetComponent<Route>();
+            route = routes[nextRoute];
             pointDistances = new List<float>(route.points.Keys);
 
             distanceTraveled = 0;
@@ -60,11 +71,13 @@ public class EnemyAI : MonoBehaviour
         //Travel along route
         for (int i = pointDistances.IndexOf(lastPointDistance); i < pointDistances.Count; i++)
         {
-            if (pointDistances[i] < distanceTraveled)
+            if (pointDistances[i] <= distanceTraveled)
             {
                 lastPointDistance = pointDistances[i];
                 continue;
             }
+
+            Debug.Log(route + " " + i);
 
             float lerpValue = (distanceTraveled - lastPointDistance) / (pointDistances[i] - lastPointDistance);
 

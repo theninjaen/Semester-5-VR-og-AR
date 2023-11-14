@@ -12,7 +12,7 @@ public class Route : MonoBehaviour
     [HideInInspector] public float lenght = 0;
     public Dictionary<float, Vector3> points = new Dictionary<float, Vector3>();
 
-    private void Start()
+    public void MakeRoute()
     {
         float t = 0;
 
