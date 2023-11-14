@@ -265,6 +265,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &602347757 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4901233744138078447, guid: 06c984940a530a4448b55506319e9780, type: 3}
+  m_PrefabInstance: {fileID: 586371824}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &637770164 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5621257844384534175, guid: 06c984940a530a4448b55506319e9780, type: 3}
@@ -524,6 +529,16 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1189543107 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4901233744138078447, guid: 06c984940a530a4448b55506319e9780, type: 3}
+  m_PrefabInstance: {fileID: 1487592948}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1253310971 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4901233744138078447, guid: 06c984940a530a4448b55506319e9780, type: 3}
+  m_PrefabInstance: {fileID: 6771564359731975664}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1487592948
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -648,7 +663,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2249800526548578319, guid: 086c7fee019482c44a737c85881c7e18, type: 3}
       propertyPath: routes.Array.size
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2249800526548578319, guid: 086c7fee019482c44a737c85881c7e18, type: 3}
       propertyPath: routes.Array.data[0]
@@ -662,6 +677,22 @@ PrefabInstance:
       propertyPath: routes.Array.data[2]
       value: 
       objectReference: {fileID: 637770164}
+    - target: {fileID: 2249800526548578319, guid: 086c7fee019482c44a737c85881c7e18, type: 3}
+      propertyPath: routesObjects.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2249800526548578319, guid: 086c7fee019482c44a737c85881c7e18, type: 3}
+      propertyPath: routesObjects.Array.data[0]
+      value: 
+      objectReference: {fileID: 1253310971}
+    - target: {fileID: 2249800526548578319, guid: 086c7fee019482c44a737c85881c7e18, type: 3}
+      propertyPath: routesObjects.Array.data[1]
+      value: 
+      objectReference: {fileID: 602347757}
+    - target: {fileID: 2249800526548578319, guid: 086c7fee019482c44a737c85881c7e18, type: 3}
+      propertyPath: routesObjects.Array.data[2]
+      value: 
+      objectReference: {fileID: 1189543107}
     - target: {fileID: 4178191927560907153, guid: 086c7fee019482c44a737c85881c7e18, type: 3}
       propertyPath: m_Name
       value: Enemy

@@ -6,10 +6,11 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
     public int health;
-    public float speedModifier;
-    public GameObject[] routesObjects;
+    public float straightSpeed;
+    public float routeSpeed;
     public Route[] routes;
-
+    public Transform target;
+    [HideInInspector] public bool goStraight;
 
     private Route route;
     private List<float> pointDistances;
@@ -17,20 +18,14 @@ public class EnemyAI : MonoBehaviour
     private float distanceTraveled;
     private int nextRoute;
 
-    // Start is called before the first frame update
-    void Start()
+    public void Ready()
     {
+        if (goStraight)
+            return;
+
         nextRoute = 0;
         lastPointDistance = 0;
         distanceTraveled = 0;
-
-        routes = new Route[routesObjects.Length];
-
-        for (int i = 0; i < routesObjects.Length; i++)
-        {
-            routes[i] = routesObjects[i].GetComponent<Route>();
-            routes[i].MakeRoute();
-        }
 
         route = routes[nextRoute];
 
@@ -45,12 +40,29 @@ public class EnemyAI : MonoBehaviour
             Destroy(gameObject);
         }
 
-        MoveAlongRoute();
+        if (goStraight)
+        {
+            MoveStraight();
+        }
+        else
+        {
+            MoveAlongRoute();
+        }
+    }
+
+    private void MoveStraight()
+    {
+        if (Vector3.Distance(transform.position, target.position) < 0.1)
+        {
+            Destroy(gameObject);
+        }
+
+        transform.position = Vector3.MoveTowards(transform.position, target.position, straightSpeed * Time.deltaTime);
     }
 
     private void MoveAlongRoute()
     {
-        distanceTraveled += Time.deltaTime * speedModifier;
+        distanceTraveled += Time.deltaTime * routeSpeed;
 
         //If route is finished, sets up next route
         if (distanceTraveled > route.lenght)
@@ -58,7 +70,7 @@ public class EnemyAI : MonoBehaviour
             nextRoute++;
 
             if (nextRoute > routes.Length - 1)
-                nextRoute = 0;
+                Destroy(gameObject);
 
             route = routes[nextRoute];
             pointDistances = new List<float>(route.points.Keys);
@@ -76,8 +88,6 @@ public class EnemyAI : MonoBehaviour
                 lastPointDistance = pointDistances[i];
                 continue;
             }
-
-            Debug.Log(route + " " + i);
 
             float lerpValue = (distanceTraveled - lastPointDistance) / (pointDistances[i] - lastPointDistance);
 
