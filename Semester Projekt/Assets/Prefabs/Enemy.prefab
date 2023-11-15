@@ -119,5 +119,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 30
+  straightSpeed: 10
+  routeSpeed: 1
   routes: []
-  speedModifier: 0.5
+  target: {fileID: 0}
+  goStraight: 0
