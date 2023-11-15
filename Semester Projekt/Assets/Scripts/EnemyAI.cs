@@ -97,8 +97,10 @@ public class EnemyAI : MonoBehaviour
 
             float lerpValue = (distanceTraveled - lastPointDistance) / (pointDistances[i] - lastPointDistance);
 
-            Vector3 targetPosition = Vector3.Lerp(route.points[lastPointDistance], route.points[pointDistances[i]], lerpValue);
-            Quaternion targetRotation = Quaternion.FromToRotation(Vector3.forward, (transform.position - targetPosition).normalized); ;
+            Vector3 targetPosition = Vector3.Lerp(route.points[lastPointDistance].position, route.points[pointDistances[i]].position, lerpValue);
+
+            Vector3 targetDirection = Vector3.Lerp(route.points[lastPointDistance].tangent, route.points[pointDistances[i]].tangent, lerpValue).normalized;
+            Quaternion targetRotation = Quaternion.FromToRotation(Vector3.forward, targetDirection);
 
             transform.position = targetPosition;
             transform.rotation = targetRotation;

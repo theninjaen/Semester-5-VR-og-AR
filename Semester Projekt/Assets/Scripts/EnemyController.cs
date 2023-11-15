@@ -46,10 +46,10 @@ public class EnemyController : MonoBehaviour
 
         if (spawnEnemies && timeSinceLastSpawn >= spawnTime)
         {
-            Vector3 spawnPosition = goStraight ? straigthSpawn.position : routes[0].points[0];
-            Vector3 spawnRotationTarget = goStraight ? straightTarget.position : routes[0].points.ElementAt(1).Value;
+            Vector3 spawnPosition = goStraight ? straigthSpawn.position : routes[0].points[0].position;
+            Vector3 spawnRotationTarget = straightTarget.position;
 
-            Vector3 spawnDirection = (spawnPosition - spawnRotationTarget).normalized;
+            Vector3 spawnDirection = goStraight ? (spawnPosition - spawnRotationTarget).normalized : routes[0].points[0].tangent;
             Quaternion spawnRotation = Quaternion.FromToRotation(Vector3.forward, spawnDirection);
 
             EnemyAI newGuy = Instantiate(enemy, spawnPosition, spawnRotation).GetComponent<EnemyAI>();
