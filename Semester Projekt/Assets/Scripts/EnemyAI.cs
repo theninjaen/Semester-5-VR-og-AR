@@ -18,6 +18,7 @@ public class EnemyAI : MonoBehaviour
     private float distanceTraveled;
     private int nextRoute;
 
+    // Gets called by the controller after the enemy i spawned, after the it has set all relevant variables
     public void Ready()
     {
         if (goStraight)
@@ -50,6 +51,7 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
+    // Moves the enemy along the straight path
     private void MoveStraight()
     {
         if (Vector3.Distance(transform.position, target.position) < 0.1)
@@ -60,17 +62,21 @@ public class EnemyAI : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, target.position, straightSpeed * Time.deltaTime);
     }
 
+    // Moves the enemy along the curved route
     private void MoveAlongRoute()
     {
         distanceTraveled += Time.deltaTime * routeSpeed;
 
-        //If route is finished, sets up next route
+        // If route is finished, sets up next route, if last route finished, destroys this
         if (distanceTraveled > route.lenght)
         {
             nextRoute++;
 
             if (nextRoute > routes.Length - 1)
+            {
                 Destroy(gameObject);
+                return;
+            }
 
             route = routes[nextRoute];
             pointDistances = new List<float>(route.points.Keys);
@@ -80,7 +86,7 @@ public class EnemyAI : MonoBehaviour
             lastPointDistance = 0;
         }
 
-        //Travel along route
+        // Travel along route
         for (int i = pointDistances.IndexOf(lastPointDistance); i < pointDistances.Count; i++)
         {
             if (pointDistances[i] <= distanceTraveled)
@@ -91,7 +97,11 @@ public class EnemyAI : MonoBehaviour
 
             float lerpValue = (distanceTraveled - lastPointDistance) / (pointDistances[i] - lastPointDistance);
 
-            transform.position = Vector3.Lerp(route.points[lastPointDistance], route.points[pointDistances[i]], lerpValue);
+            Vector3 targetPosition = Vector3.Lerp(route.points[lastPointDistance], route.points[pointDistances[i]], lerpValue);
+            Quaternion targetRotation = Quaternion.FromToRotation(Vector3.forward, (transform.position - targetPosition).normalized); ;
+
+            transform.position = targetPosition;
+            transform.rotation = targetRotation;
 
             break;
         }

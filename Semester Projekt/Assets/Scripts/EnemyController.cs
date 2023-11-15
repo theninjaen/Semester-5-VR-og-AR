@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -11,22 +12,23 @@ public class EnemyController : MonoBehaviour
     public Transform straigthSpawn;
     public Transform straightTarget;
 
-    public GameObject[] routesObjects;
+    public GameObject[] routeObjects;
     [HideInInspector] public Route[] routes;
     public bool goStraight = false;
 
     public bool spawnEnemies;
-    private float timeSinceLastSpawn = 0;
+    private float timeSinceLastSpawn;
     public float spawnTime;
 
     // Start is called before the first frame update
     void Start()
     {
-        routes = new Route[routesObjects.Length];
+        timeSinceLastSpawn = spawnTime;
+        routes = new Route[routeObjects.Length];
 
-        for (int i = 0; i < routesObjects.Length; i++)
+        for (int i = 0; i < routeObjects.Length; i++)
         {
-            routes[i] = routesObjects[i].GetComponent<Route>();
+            routes[i] = routeObjects[i].GetComponent<Route>();
             routes[i].MakeRoute();
         }
     }
@@ -34,13 +36,23 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        SpawnEnemy();
+    }
+
+    // Spawns new enemy basen on time since last spawn and spawn location
+    private void SpawnEnemy()
+    {
         timeSinceLastSpawn += Time.deltaTime;
 
         if (spawnEnemies && timeSinceLastSpawn >= spawnTime)
         {
-            Vector3 spawnPosition = goStraight ? straigthSpawn.position : routes[0].controlPoints[0].position;
+            Vector3 spawnPosition = goStraight ? straigthSpawn.position : routes[0].points[0];
+            Vector3 spawnRotationTarget = goStraight ? straightTarget.position : routes[0].points.ElementAt(1).Value;
 
-            EnemyAI newGuy = Instantiate(enemy, spawnPosition, Quaternion.identity).GetComponent<EnemyAI>();
+            Vector3 spawnDirection = (spawnPosition - spawnRotationTarget).normalized;
+            Quaternion spawnRotation = Quaternion.FromToRotation(Vector3.forward, spawnDirection);
+
+            EnemyAI newGuy = Instantiate(enemy, spawnPosition, spawnRotation).GetComponent<EnemyAI>();
 
             newGuy.routes = routes;
             newGuy.target = straightTarget;
@@ -51,6 +63,7 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    //Changes the path of spawned enemies based on data recieved from the Arduino
     void OnMessageArrived(string msg)
     {
         switch (msg)

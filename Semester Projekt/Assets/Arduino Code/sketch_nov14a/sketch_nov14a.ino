@@ -10,6 +10,10 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
+  CheckInput();
+}
+
+void CheckInput() {
   inputData = digitalRead(readPin);
 
   if (inputData == lastInput) {

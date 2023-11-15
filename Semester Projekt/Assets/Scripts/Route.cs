@@ -12,12 +12,14 @@ public class Route : MonoBehaviour
     [HideInInspector] public float lenght = 0;
     public Dictionary<float, Vector3> points = new Dictionary<float, Vector3>();
 
+    //Gets called by controller, creates a library containing points along the route for the enemy to travel along
     public void MakeRoute()
     {
         float t = 0;
 
         for (int i = 0; i <= routeSegments ; i++)
         {
+            // Formula for creating a bezier curve
             Vector3 routePoint = Mathf.Pow(1 - t, 3) * controlPoints[0].position +
                 3 * Mathf.Pow(1 - t, 2) * t * controlPoints[1].position +
                 3 * (1 - t) * Mathf.Pow(t, 2) * controlPoints[2].position +
@@ -37,6 +39,7 @@ public class Route : MonoBehaviour
         }
     }
 
+    // Debug tool, Draws route in editor
     private void OnDrawGizmos()
     {
         for (float t = 0; t<= 1; t += 0.05f)
