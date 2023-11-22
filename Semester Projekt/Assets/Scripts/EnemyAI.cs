@@ -6,8 +6,11 @@ using UnityEngine;
 public class EnemyAI : MonoBehaviour
 {
     public int health;
-    public float speedModifier;
-    public Transform[] routes;
+    public float straightSpeed;
+    public float routeSpeed;
+    public Route[] routes;
+    public Transform target;
+    [HideInInspector] public bool goStraight;
 
     private Route route;
     private List<float> pointDistances;
@@ -15,14 +18,18 @@ public class EnemyAI : MonoBehaviour
     private float distanceTraveled;
     private int nextRoute;
 
-    // Start is called before the first frame update
-    void Start()
+    // Gets called by the controller after the enemy i spawned, after the it has set all relevant variables
+    public void Ready()
     {
+        if (goStraight)
+            return;
+
         nextRoute = 0;
         lastPointDistance = 0;
         distanceTraveled = 0;
 
-        route = routes[nextRoute].GetComponent<Route>();
+        route = routes[nextRoute];
+
         pointDistances = new List<float>(route.points.Keys);
     }
 
@@ -34,22 +41,44 @@ public class EnemyAI : MonoBehaviour
             Destroy(gameObject);
         }
 
-        MoveAlongRoute();
+        if (goStraight)
+        {
+            MoveStraight();
+        }
+        else
+        {
+            MoveAlongRoute();
+        }
     }
 
+    // Moves the enemy along the straight path
+    private void MoveStraight()
+    {
+        if (Vector3.Distance(transform.position, target.position) < 0.1)
+        {
+            Destroy(gameObject);
+        }
+
+        transform.position = Vector3.MoveTowards(transform.position, target.position, straightSpeed * Time.deltaTime);
+    }
+
+    // Moves the enemy along the curved route
     private void MoveAlongRoute()
     {
-        distanceTraveled += Time.deltaTime * speedModifier;
+        distanceTraveled += Time.deltaTime * routeSpeed;
 
-        //If route is finished, sets up next route
+        // If route is finished, sets up next route, if last route finished, destroys this
         if (distanceTraveled > route.lenght)
         {
             nextRoute++;
 
             if (nextRoute > routes.Length - 1)
-                nextRoute = 0;
+            {
+                Destroy(gameObject);
+                return;
+            }
 
-            route = routes[nextRoute].GetComponent<Route>();
+            route = routes[nextRoute];
             pointDistances = new List<float>(route.points.Keys);
 
             distanceTraveled = 0;
@@ -57,10 +86,10 @@ public class EnemyAI : MonoBehaviour
             lastPointDistance = 0;
         }
 
-        //Travel along route
+        // Travel along route
         for (int i = pointDistances.IndexOf(lastPointDistance); i < pointDistances.Count; i++)
         {
-            if (pointDistances[i] < distanceTraveled)
+            if (pointDistances[i] <= distanceTraveled)
             {
                 lastPointDistance = pointDistances[i];
                 continue;
@@ -68,7 +97,13 @@ public class EnemyAI : MonoBehaviour
 
             float lerpValue = (distanceTraveled - lastPointDistance) / (pointDistances[i] - lastPointDistance);
 
-            transform.position = Vector3.Lerp(route.points[lastPointDistance], route.points[pointDistances[i]], lerpValue);
+            Vector3 targetPosition = Vector3.Lerp(route.points[lastPointDistance].position, route.points[pointDistances[i]].position, lerpValue);
+
+            Vector3 targetDirection = Vector3.Lerp(route.points[lastPointDistance].tangent, route.points[pointDistances[i]].tangent, lerpValue).normalized;
+            Quaternion targetRotation = Quaternion.FromToRotation(Vector3.forward, targetDirection);
+
+            transform.position = targetPosition;
+            transform.rotation = targetRotation;
 
             break;
         }
