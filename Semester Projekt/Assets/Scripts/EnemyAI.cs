@@ -104,6 +104,7 @@ public class EnemyAI : MonoBehaviour
 
             transform.position = targetPosition;
             transform.rotation = targetRotation;
+            transform.eulerAngles = new Vector3(transform.eulerAngles.x, 90, 0);
 
             break;
         }
