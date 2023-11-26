@@ -1,13 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Scale : MonoBehaviour
 {
-    public int currentValue = 50;
-    public int minValue;
-    public int maxValue;
+    public float currentValue = 50f;
+    public float minValue = 0f;
+    public float maxValue = 100f;
     public float timer;
+
+    public Slider scale;
+    public Image scaleImage;
+    public Image filter;
+
+    private Color gradient;
 
     private void Update()
     {
@@ -25,26 +32,29 @@ public class Scale : MonoBehaviour
             reduceValue(2);
             timer = currentTime;
         }
+
+        scale.value = currentValue;
+        gradient = Color.Lerp(Color.blue, Color.green, currentValue / maxValue);
+        scaleImage.color = gradient;
+        filter.color = gradient;
     }
 
-    void reduceValue(int air)
+    public void reduceValue(float air)
     {
-        if (currentValue < minValue)
+        currentValue = currentValue - air;
+        if (currentValue <= minValue)
         {
             currentValue = minValue;
-        } else {
-            currentValue = currentValue - air;
         }
     }
 
-    void increaseValue(int nutrients)
+    public void increaseValue(float nutrients)
     {
-        if(currentValue > maxValue)
-        {
-            currentValue = maxValue;
-        } else {
-            currentValue = currentValue + nutrients;
-        }
+        currentValue = currentValue + nutrients;
+            if (currentValue >= maxValue)
+            {
+                currentValue = maxValue;
+            }
         
     }
 }
