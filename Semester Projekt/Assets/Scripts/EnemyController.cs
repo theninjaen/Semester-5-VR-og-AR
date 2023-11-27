@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour
     public SerialController serialController;
 
     public GameObject enemy;
+    public GameObject scale;
     public Transform straigthSpawn;
     public Transform straightTarget;
 
@@ -57,6 +58,7 @@ public class EnemyController : MonoBehaviour
             newGuy.routes = routes;
             newGuy.target = straightTarget;
             newGuy.goStraight = goStraight;
+            newGuy.scale = scale.GetComponent<Scale>();
             newGuy.Ready();
 
             timeSinceLastSpawn = 0;

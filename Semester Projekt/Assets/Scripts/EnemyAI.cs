@@ -11,6 +11,7 @@ public class EnemyAI : MonoBehaviour
     public Route[] routes;
     public Transform target;
     [HideInInspector] public bool goStraight;
+    public Scale scale;
 
     private Route route;
     private List<float> pointDistances;
@@ -56,7 +57,8 @@ public class EnemyAI : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, target.position) < 0.1)
         {
-            Destroy(gameObject);
+            Destroy(gameObject); //HER SKA SØEN BLIVE GRØNNERE
+            scale.increaseValue(1);
         }
 
         transform.position = Vector3.MoveTowards(transform.position, target.position, straightSpeed * Time.deltaTime);
@@ -74,7 +76,8 @@ public class EnemyAI : MonoBehaviour
 
             if (nextRoute > routes.Length - 1)
             {
-                Destroy(gameObject);
+                Destroy(gameObject); //HER SKAL SØEN BLIVER GRØNNERE
+                scale.increaseValue(1);
                 return;
             }
 
