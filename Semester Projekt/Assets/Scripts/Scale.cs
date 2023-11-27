@@ -14,6 +14,8 @@ public class Scale : MonoBehaviour
     public Image scaleImage;
     public Image filter;
 
+    private Color cleanColor = new Color(0f, 0f, 1f, 0.1f);
+    private Color dirtyColor = new Color(0f, 1f, 0f, 0.1f);
     private Color gradient;
 
     private void Update()
@@ -34,9 +36,8 @@ public class Scale : MonoBehaviour
         }
 
         scale.value = currentValue;
-        gradient = Color.Lerp(Color.blue, Color.green, currentValue / maxValue);
-        scaleImage.color = gradient;
-        filter.color = gradient;
+        scaleImage.color = Color.Lerp(Color.blue, Color.green, currentValue / maxValue);
+        filter.color = Color.Lerp(cleanColor, dirtyColor, currentValue / maxValue - 0.2f);
     }
 
     public void reduceValue(float air)
