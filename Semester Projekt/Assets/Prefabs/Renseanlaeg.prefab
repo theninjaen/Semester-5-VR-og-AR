@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1693303312066427681
+--- !u!1 &4643611252624549519
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,46 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 180370958880538660}
-  - component: {fileID: 1934877446038380416}
-  - component: {fileID: 2593816862683491530}
+  - component: {fileID: 1853446237157945606}
+  - component: {fileID: 3130451559183026148}
+  - component: {fileID: 3231102498358028103}
   m_Layer: 0
-  m_Name: Reed.003
+  m_Name: WaterTreatment.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &180370958880538660
+--- !u!4 &1853446237157945606
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1693303312066427681}
+  m_GameObject: {fileID: 4643611252624549519}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.48279443, w: 0.87573373}
-  m_LocalPosition: {x: -0.00026540196, y: -0.00026628285, z: 0}
-  m_LocalScale: {x: 1.6628637, y: 1.6628637, z: 1.6628635}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0.000001764999}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5912730845529907525}
+  m_Father: {fileID: 1638642079935098352}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1934877446038380416
+--- !u!33 &3130451559183026148
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1693303312066427681}
-  m_Mesh: {fileID: 7963232894941229164, guid: 1c32f5efbedcbae4abaa24bab0318dea, type: 3}
---- !u!23 &2593816862683491530
+  m_GameObject: {fileID: 4643611252624549519}
+  m_Mesh: {fileID: -1720346112230938334, guid: 1c32f5efbedcbae4abaa24bab0318dea, type: 3}
+--- !u!23 &3231102498358028103
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1693303312066427681}
+  m_GameObject: {fileID: 4643611252624549519}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -2813467912831258332, guid: 1c32f5efbedcbae4abaa24bab0318dea, type: 3}
+  - {fileID: 3780671244086486322, guid: 1c32f5efbedcbae4abaa24bab0318dea, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,7 +83,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &5754417061655077085
+--- !u!1 &5772176459347648367
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,47 +91,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 509988437535077742}
-  - component: {fileID: 4305826673155908134}
-  - component: {fileID: 6658572883827204324}
+  - component: {fileID: 1638642079935098352}
+  - component: {fileID: 4002378087079042707}
+  - component: {fileID: 5936610782790452700}
   m_Layer: 0
-  m_Name: BaseOfWetlands.010
+  m_Name: BaseOfWaterTreatment
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &509988437535077742
+--- !u!4 &1638642079935098352
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5754417061655077085}
+  m_GameObject: {fileID: 5772176459347648367}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 0.0032999963, z: 0}
+  m_LocalPosition: {x: 0, y: 0.002, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5912730845529907525}
-  m_Father: {fileID: 378092511596899191}
+  - {fileID: 1853446237157945606}
+  m_Father: {fileID: 1620949647746015811}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4305826673155908134
+--- !u!33 &4002378087079042707
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5754417061655077085}
-  m_Mesh: {fileID: -2336942897344145722, guid: 1c32f5efbedcbae4abaa24bab0318dea, type: 3}
---- !u!23 &6658572883827204324
+  m_GameObject: {fileID: 5772176459347648367}
+  m_Mesh: {fileID: 1959379986377715600, guid: 1c32f5efbedcbae4abaa24bab0318dea, type: 3}
+--- !u!23 &5936610782790452700
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5754417061655077085}
+  m_GameObject: {fileID: 5772176459347648367}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -145,7 +145,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6922793697723135513, guid: 1c32f5efbedcbae4abaa24bab0318dea, type: 3}
+  - {fileID: 1886820026795636259, guid: 1c32f5efbedcbae4abaa24bab0318dea, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -167,7 +167,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &7644183187735468653
+--- !u!1 &6434878086104730706
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,126 +175,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5912730845529907525}
-  - component: {fileID: 4818188148810883475}
-  - component: {fileID: 5555300182669209850}
+  - component: {fileID: 1620949647746015811}
+  - component: {fileID: 7201324681524423636}
+  - component: {fileID: 2500140684889278107}
+  - component: {fileID: 86906822338641970}
   m_Layer: 0
-  m_Name: WetGrass
+  m_Name: Renseanlaeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5912730845529907525
+--- !u!4 &1620949647746015811
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7644183187735468653}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 180370958880538660}
-  m_Father: {fileID: 509988437535077742}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &4818188148810883475
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7644183187735468653}
-  m_Mesh: {fileID: -8573842366446965662, guid: 1c32f5efbedcbae4abaa24bab0318dea, type: 3}
---- !u!23 &5555300182669209850
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7644183187735468653}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: -876546973899608171, guid: 1c32f5efbedcbae4abaa24bab0318dea, type: 3}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &8457338543577257623
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 378092511596899191}
-  - component: {fileID: 6065481259716288493}
-  - component: {fileID: 4207734499378858067}
-  - component: {fileID: 7198165305864895571}
-  - component: {fileID: 6297835491408871980}
-  m_Layer: 0
-  m_Name: WetLands
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &378092511596899191
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8457338543577257623}
+  m_GameObject: {fileID: 6434878086104730706}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.388, y: 0, z: 0.227}
+  m_LocalPosition: {x: 0.531, y: 0, z: -0.1687}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 635839187753548366}
-  - {fileID: 509988437535077742}
+  - {fileID: 3094284088821960629}
+  - {fileID: 1638642079935098352}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6065481259716288493
+--- !u!114 &7201324681524423636
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8457338543577257623}
+  m_GameObject: {fileID: 6434878086104730706}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -1631628248, guid: 8a9a760f95896c34689febc965510927, type: 3}
@@ -303,7 +218,7 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: VaadOmraadeTarget
+  mTrackableName: RenseanglaegTarget
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Plants.xml
   mAspectRatio: 1
@@ -314,14 +229,14 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 6297835491408871980}
---- !u!114 &4207734499378858067
+  mPreview: {fileID: 86906822338641970}
+--- !u!114 &2500140684889278107
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8457338543577257623}
+  m_GameObject: {fileID: 6434878086104730706}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 886328de6a5c14cbb85854fdf1a5085b, type: 3}
@@ -359,51 +274,32 @@ MonoBehaviour:
   OnTargetLost:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &7198165305864895571
+--- !u!114 &86906822338641970
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8457338543577257623}
+  m_GameObject: {fileID: 6434878086104730706}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 6065481259716288493}
+  mObserverBehaviour: {fileID: 7201324681524423636}
   mHiddenRoot: {fileID: 0}
-  mTargetName: VaadOmraadeTarget
+  mTargetName: RenseanglaegTarget
   mDatasetName: Vuforia/Plants.xml
-  mCastedBehaviour: {fileID: 6065481259716288493}
+  mCastedBehaviour: {fileID: 7201324681524423636}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
---- !u!114 &6297835491408871980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8457338543577257623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 6065481259716288493}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: VaadOmraadeTarget
-  mDatasetName: Vuforia/Plants.xml
-  mCastedBehaviour: {fileID: 6065481259716288493}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
---- !u!1001 &7114840025055709894
+--- !u!1001 &4656462451894632253
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 378092511596899191}
+    m_TransformParent: {fileID: 1620949647746015811}
     m_Modifications:
     - target: {fileID: 5636880441106309209, guid: 79476b0ec4394a645a6d2af849a6efe0, type: 3}
       propertyPath: m_Name
@@ -454,8 +350,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79476b0ec4394a645a6d2af849a6efe0, type: 3}
---- !u!4 &635839187753548366 stripped
+--- !u!4 &3094284088821960629 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7669077187827331208, guid: 79476b0ec4394a645a6d2af849a6efe0, type: 3}
-  m_PrefabInstance: {fileID: 7114840025055709894}
+  m_PrefabInstance: {fileID: 4656462451894632253}
   m_PrefabAsset: {fileID: 0}
