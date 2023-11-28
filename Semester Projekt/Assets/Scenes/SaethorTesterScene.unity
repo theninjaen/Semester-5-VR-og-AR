@@ -183,6 +183,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1604101903682783628, guid: 6c0b7ce6d7a57234ea0aa0f9ac52f942, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1729749096}
+    - targetCorrespondingSourceObject: {fileID: 1604101903682783628, guid: 6c0b7ce6d7a57234ea0aa0f9ac52f942, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1729749097}
   m_SourcePrefab: {fileID: 100100000, guid: 6c0b7ce6d7a57234ea0aa0f9ac52f942, type: 3}
 --- !u!1 &724700653
 GameObject:
@@ -405,6 +408,25 @@ MonoBehaviour:
   mCastedBehaviour: {fileID: 1223205942}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
+--- !u!114 &1223205946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1223205940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 1223205942}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: TraeTarget
+  mDatasetName: Vuforia/Plants.xml
+  mCastedBehaviour: {fileID: 1223205942}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &1295195883 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6434878086104730706, guid: 0572e180be079bd429ec8a7fe9cb6557, type: 3}
@@ -422,6 +444,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1295195888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1295195883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 1295195885}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: RenseanglaegTarget
+  mDatasetName: Vuforia/Plants.xml
+  mCastedBehaviour: {fileID: 1295195885}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
+--- !u!114 &1295195889
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -500,6 +541,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6434878086104730706, guid: 0572e180be079bd429ec8a7fe9cb6557, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1295195888}
+    - targetCorrespondingSourceObject: {fileID: 6434878086104730706, guid: 0572e180be079bd429ec8a7fe9cb6557, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1295195889}
     - targetCorrespondingSourceObject: {fileID: 5772176459347648367, guid: 0572e180be079bd429ec8a7fe9cb6557, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1861382593}
@@ -539,6 +583,25 @@ MonoBehaviour:
   mCastedBehaviour: {fileID: 1398937582}
   mMeshFilter: {fileID: 0}
   mMeshRenderer: {fileID: 0}
+--- !u!114 &1398937586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398937580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 1398937582}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: TraktorTarget
+  mDatasetName: Vuforia/Plants.xml
+  mCastedBehaviour: {fileID: 1398937582}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &1729749091 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1604101903682783628, guid: 6c0b7ce6d7a57234ea0aa0f9ac52f942, type: 3}
@@ -556,6 +619,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1729749096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729749091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 1729749093}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: KloeverTarget
+  mDatasetName: Vuforia/Plants.xml
+  mCastedBehaviour: {fileID: 1729749093}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
+--- !u!114 &1729749097
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -652,6 +734,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8704680423853828558, guid: 238b6621834ee654e975acbc62229877, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1223205945}
+    - targetCorrespondingSourceObject: {fileID: 8704680423853828558, guid: 238b6621834ee654e975acbc62229877, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1223205946}
   m_SourcePrefab: {fileID: 100100000, guid: 238b6621834ee654e975acbc62229877, type: 3}
 --- !u!1001 &2057819139
 PrefabInstance:
@@ -671,7 +756,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5345850765702826973, guid: 055b75e8066d5c54792b8152d5617fb9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.14565948
+      value: 0.000000029802322
       objectReference: {fileID: 0}
     - target: {fileID: 5345850765702826973, guid: 055b75e8066d5c54792b8152d5617fb9, type: 3}
       propertyPath: m_LocalRotation.w
@@ -713,6 +798,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5465674199076051907, guid: 055b75e8066d5c54792b8152d5617fb9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1398937585}
+    - targetCorrespondingSourceObject: {fileID: 5465674199076051907, guid: 055b75e8066d5c54792b8152d5617fb9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1398937586}
   m_SourcePrefab: {fileID: 100100000, guid: 055b75e8066d5c54792b8152d5617fb9, type: 3}
 --- !u!4 &2060979845 stripped
 Transform:
