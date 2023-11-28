@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig>
   <Tracking>
+    <ImageTarget name="RenseanglaegTarget2" size="0.080000 0.080000" />
+    <ImageTarget name="KloeverTarget2" size="0.080000 0.080000" />
+    <ImageTarget name="VaadOmraadeTarget2" size="0.080000 0.080000" />
+    <ImageTarget name="TraeTarget2" size="0.080000 0.080000" />
+    <ImageTarget name="TraktorTarget2" size="0.080000 0.080000" />
+    <ImageTarget name="RenseanglaegTarget" size="0.080000 0.080000" />
+    <ImageTarget name="KloeverTarget" size="0.080000 0.080000" />
+    <ImageTarget name="VaadOmraadeTarget" size="0.080000 0.080000" />
+    <ImageTarget name="TraeTarget" size="0.080000 0.080000" />
+    <ImageTarget name="TraktorTarget" size="0.080000 0.080000" />
     <ImageTarget name="Marker4" size="0.100000 0.100000" />
     <ImageTarget name="Marker3" size="0.100000 0.100000" />
     <ImageTarget name="Marker2" size="0.100000 0.100000" />

@@ -32,6 +32,14 @@ public class EnemyController : MonoBehaviour
             routes[i] = routeObjects[i].GetComponent<Route>();
             routes[i].MakeRoute();
         }
+
+        /*foreach (Route route in routes)
+        {
+            foreach (float key in route.points.Keys)
+            {
+                Debug.LogWarning(key);
+            }
+        }*/
     }
 
     // Update is called once per frame

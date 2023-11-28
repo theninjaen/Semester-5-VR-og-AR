@@ -115,6 +115,8 @@ MonoBehaviour:
   - {fileID: 8335336170690181296}
   - {fileID: 3326872265809962942}
   - {fileID: 6504811954779356835}
+  routeSegments: 20
+  lenght: 0
 --- !u!1 &8486024389567845290
 GameObject:
   m_ObjectHideFlags: 0
