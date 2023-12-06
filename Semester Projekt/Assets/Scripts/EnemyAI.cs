@@ -8,6 +8,7 @@ public class EnemyAI : MonoBehaviour
     public int health;
     public float straightSpeed;
     public float routeSpeed;
+    public float damage;
     public Route[] routes;
     public Transform target;
     [HideInInspector] public bool goStraight;
@@ -58,7 +59,7 @@ public class EnemyAI : MonoBehaviour
         if (Vector3.Distance(transform.position, target.position) < 0.1)
         {
             Destroy(gameObject); //HER SKA SØEN BLIVE GRØNNERE
-            scale.increaseValue(1);
+            scale.increaseValue(damage);
         }
 
         transform.position = Vector3.MoveTowards(transform.position, target.position, straightSpeed * Time.deltaTime);
@@ -77,7 +78,7 @@ public class EnemyAI : MonoBehaviour
             if (nextRoute > routes.Length - 1)
             {
                 Destroy(gameObject); //HER SKAL SØEN BLIVER GRØNNERE
-                scale.increaseValue(1);
+                scale.increaseValue(damage);
                 return;
             }
 

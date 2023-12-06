@@ -9,6 +9,7 @@ public class Scale : MonoBehaviour
     public float minValue = 0f;
     public float maxValue = 100f;
     public float timer;
+    public float algeSpeed;
 
     public Slider scale;
     public Image scaleImage;
@@ -24,16 +25,8 @@ public class Scale : MonoBehaviour
         {
             increaseValue(1);
         }
-    }
 
-    void FixedUpdate()
-    {
-        float currentTime = Time.time;
-        if (currentTime - timer >= 1)
-        {
-            reduceValue(2);
-            timer = currentTime;
-        }
+        reduceValue(Time.deltaTime * algeSpeed);
 
         scale.value = currentValue;
         scaleImage.color = Color.Lerp(Color.blue, Color.green, currentValue / maxValue);
